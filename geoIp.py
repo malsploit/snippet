@@ -1,10 +1,15 @@
 #!/usr/bin/python
 import os
 import sys
-import pygeoip
 import urllib2
 import StringIO
 import gzip
+try:
+    import pygeoip
+except:
+    print "pygeoip library not found, please install it before proceeding\n"
+    
+    sys.exit()
 #sys.tracebacklimit = 0
 def ipLocator(ip):
 	GeoIPDatabase = 'GeoLiteCity.dat'
